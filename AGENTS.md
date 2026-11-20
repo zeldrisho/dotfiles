@@ -18,7 +18,7 @@
 
 ## Rules
 
-- Before implementing changes, research the relevant official documentation at `site:chezmoi.io` and `site:docs.brew.sh`.
+- Before implementing changes, research the relevant official documentation at `site:chezmoi.io`, `site:docs.brew.sh`, and `site:fishshell.com/docs`.
 - Use Conventional Commits.
 - Use chezmoi naming conventions: `dot_` for hidden files and `private_` for private paths.
 - Review `chezmoi diff` before applying changes.

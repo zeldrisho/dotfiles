@@ -1,0 +1,8 @@
+#!/bin/sh
+set -eu
+
+{{ if eq .chezmoi.os "darwin" -}}
+mkdir -p "$HOME/Library/Android/sdk"
+{{ else -}}
+mkdir -p "$HOME/Android/Sdk"
+{{ end -}}

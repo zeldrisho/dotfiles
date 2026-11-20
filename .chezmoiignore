@@ -3,6 +3,7 @@ AGENTS.md
 LICENSE
 # Optional local credentials and signing material.
 .gradle/gradle.properties
+.config/fish/conf.d/local.fish
 **/morphe.keystore
 {{ if ne .chezmoi.os "darwin" }}
 Library

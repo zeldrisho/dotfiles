@@ -12,11 +12,6 @@ if test (uname) = Darwin
     set -gx ANDROID_HOME "$HOME/Library/Android/sdk"
 end
 
-# Keep credentials and machine-specific variables in this untracked file.
-if test -r "$HOME/.config/fish/local.fish"
-    source "$HOME/.config/fish/local.fish"
-end
-
 zoxide init fish | source
 
 function y

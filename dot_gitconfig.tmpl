@@ -4,7 +4,7 @@
 
 [credential "https://github.com"]
 	helper =
-	helper = !gh auth git-credential
+	helper = !{{ if eq .chezmoi.os "darwin" }}/opt/homebrew/bin/gh{{ else }}/usr/bin/gh{{ end }} auth git-credential
 [credential "https://gist.github.com"]
 	helper =
-	helper = !gh auth git-credential
+	helper = !{{ if eq .chezmoi.os "darwin" }}/opt/homebrew/bin/gh{{ else }}/usr/bin/gh{{ end }} auth git-credential

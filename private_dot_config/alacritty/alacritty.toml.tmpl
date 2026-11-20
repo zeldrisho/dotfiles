@@ -4,7 +4,7 @@ import = [
 ]
 
 [terminal.shell]
-program = "{{ if eq .chezmoi.os "darwin" }}/opt/homebrew/bin/fish{{ else }}/home/linuxbrew/.linuxbrew/bin/fish{{ end }}"
+program = "{{ if eq .chezmoi.os "darwin" }}/opt/homebrew/bin/fish{{ else }}/usr/bin/fish{{ end }}"
 
 [font]
 normal = { family = "JetBrainsMono NF" }

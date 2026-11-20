@@ -1,0 +1,43 @@
+# Initialize Homebrew when available (macOS or Linuxbrew).
+if type -q brew
+    eval (brew shellenv fish)
+end
+
+set -g fish_greeting ""
+set -gx EDITOR micro
+set -gx MICRO_TRUECOLOR 1
+
+if test (uname) = Darwin
+    set -gx ANDROID_HOME "$HOME/Library/Android/sdk"
+else
+    set -gx ANDROID_HOME "$HOME/Android/Sdk"
+    for android_path in "$ANDROID_HOME/platform-tools" "$ANDROID_HOME/build-tools/36.0.0"
+        if test -d "$android_path"
+            fish_add_path --append "$android_path"
+        end
+    end
+end
+
+if type -q zoxide
+    zoxide init fish | source
+end
+
+function y
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    command yazi $argv --cwd-file="$tmp"
+    if read -z cwd < "$tmp"; and test "$cwd" != "$PWD"; and test -d "$cwd"
+        builtin cd -- "$cwd"
+    end
+    command rm -f -- "$tmp"
+end
+
+{{ if and (eq .chezmoi.os "linux") (contains "microsoft" (.chezmoi.kernel.osrelease | lower)) }}
+if type -q brew
+    set -l brew_prefix (brew --prefix)
+    for completion_dir in "$brew_prefix/share/fish/completions" "$brew_prefix/share/fish/vendor_completions.d"
+        if test -d "$completion_dir"
+            set -p fish_complete_path "$completion_dir"
+        end
+    end
+end
+{{ end }}

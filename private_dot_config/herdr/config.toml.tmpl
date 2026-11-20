@@ -2,6 +2,8 @@ onboarding = false
 
 [ui.toast]
 delivery = "herdr"
+{{ if eq .chezmoi.os "darwin" }}
 
 [terminal]
 default_shell = "/opt/homebrew/bin/fish"
+{{ end }}

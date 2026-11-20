@@ -30,4 +30,3 @@
 | Need | File |
 | --- | --- |
 | Project usage | `README.md` |
-| Chezmoi documentation | `https://www.chezmoi.io/` |

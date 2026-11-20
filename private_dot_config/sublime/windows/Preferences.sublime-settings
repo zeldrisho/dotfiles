@@ -1,0 +1,13 @@
+// Settings in here override those in "Default/Preferences.sublime-settings",
+// and are overridden in turn by syntax-specific settings.
+{
+	"font_face": "JetBrainsMono NF",
+	"font_size": 12,
+	"word_wrap": true,
+	"theme": "auto",
+	"color_scheme": "Catppuccin Mocha.sublime-color-scheme",
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+}

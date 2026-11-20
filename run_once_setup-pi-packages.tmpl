@@ -1,0 +1,21 @@
+#!/bin/sh
+set -eu
+
+# Ensure Homebrew-managed prerequisites are available on both macOS and WSL.
+if command -v brew >/dev/null 2>&1 && [ -f "$HOME/.Brewfile" ]; then
+  brew bundle --file="$HOME/.Brewfile" --no-upgrade
+fi
+
+command -v herdr >/dev/null 2>&1
+command -v vp >/dev/null 2>&1
+command -v git >/dev/null 2>&1
+
+mkdir -p "$HOME/.pi/agent/extensions" "$HOME/Projects"
+herdr integration install pi
+
+if [ ! -d "$HOME/Projects/pi-packages/.git" ]; then
+  git clone https://github.com/zeldrisho/pi-packages "$HOME/Projects/pi-packages"
+fi
+
+cd "$HOME/Projects/pi-packages"
+vp install

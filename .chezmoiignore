@@ -1,3 +1,14 @@
 README.md
 AGENTS.md
 LICENSE
+# Optional local credentials and signing material.
+.gradle/gradle.properties
+**/morphe.keystore
+{{ if ne .chezmoi.os "darwin" }}
+Library
+{{ end }}
+{{ if not (and (eq .chezmoi.os "linux") (contains "microsoft" (.chezmoi.kernel.osrelease | lower))) }}
+mnt
+.config/alacritty/windows
+.config/sublime/windows
+{{ end }}

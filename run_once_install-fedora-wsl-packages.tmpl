@@ -1,0 +1,8 @@
+{{- if and (eq .chezmoi.os "linux") (contains "microsoft" (.chezmoi.kernel.osrelease | lower)) -}}
+#!/bin/sh
+set -eu
+
+sudo dnf install -y \
+  pipewire-pulseaudio pulseaudio-utils wl-clipboard git gawk micro \
+  zoxide gh fd-find jq ripgrep uv fish tailscale chezmoi
+{{- end }}

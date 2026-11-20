@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu
+
+if command -v brew >/dev/null 2>&1 && [ -f "$HOME/.Brewfile" ]; then
+  brew bundle --file="$HOME/.Brewfile" --no-upgrade
+fi

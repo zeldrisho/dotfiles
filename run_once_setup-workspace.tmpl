@@ -1,0 +1,16 @@
+{{- if or (eq .chezmoi.os "darwin") (and (eq .chezmoi.os "linux") (contains "microsoft" (.chezmoi.kernel.osrelease | lower))) -}}
+#!/bin/sh
+set -eu
+
+mkdir -p "$HOME/Projects"
+
+if [ ! -e "$HOME/Projects/dotfiles" ] && [ ! -L "$HOME/Projects/dotfiles" ]; then
+  ln -s "$HOME/.local/share/chezmoi" "$HOME/Projects/dotfiles"
+fi
+
+{{- if and (eq .chezmoi.os "linux") (contains "microsoft" (.chezmoi.kernel.osrelease | lower)) }}
+if [ ! -e "$HOME/Downloads" ] && [ ! -L "$HOME/Downloads" ]; then
+  ln -s /mnt/c/Users/zeldrisho/Downloads "$HOME/Downloads"
+fi
+{{- end }}
+{{- end }}

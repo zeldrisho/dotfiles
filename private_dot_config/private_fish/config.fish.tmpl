@@ -3,7 +3,7 @@ if type -q brew
     eval (brew shellenv fish)
 end
 
-set -g fish_greeting ""
+set -g fish_greeting
 set -gx EDITOR micro
 set -gx MICRO_TRUECOLOR 1
 
@@ -11,11 +11,6 @@ if test (uname) = Darwin
     set -gx ANDROID_HOME "$HOME/Library/Android/sdk"
 else
     set -gx ANDROID_HOME "$HOME/Android/Sdk"
-    for android_path in "$ANDROID_HOME/platform-tools" "$ANDROID_HOME/build-tools/36.0.0"
-        if test -d "$android_path"
-            fish_add_path --append "$android_path"
-        end
-    end
 end
 
 if type -q zoxide

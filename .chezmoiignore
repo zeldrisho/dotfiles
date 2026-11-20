@@ -8,6 +8,10 @@ LICENSE
 {{ if ne .chezmoi.os "darwin" }}
 Library
 {{ end }}
+{{ if eq .chezmoi.os "linux" }}
+.config/alacritty/alacritty.toml
+.config/alacritty/catppuccin-mocha.toml
+{{ end }}
 {{ if not (and (eq .chezmoi.os "linux") (contains "microsoft" (.chezmoi.kernel.osrelease | lower))) }}
 mnt
 .config/alacritty/windows

@@ -12,6 +12,6 @@ mkdir -p "$sublime_config"
 cp "$HOME/.config/sublime/windows/Preferences.sublime-settings" "$sublime_config/Preferences.sublime-settings"
 
 # {{ include "private_dot_config/alacritty/windows/alacritty.toml.tmpl" | sha256sum }}
-# {{ include "private_dot_config/alacritty/windows/catppuccin-mocha.toml" | sha256sum }}
+# {{ include "private_dot_config/alacritty/windows/catppuccin-mocha.toml.tmpl" | sha256sum }}
 # {{ include "private_dot_config/sublime/windows/Preferences.sublime-settings" | sha256sum }}
 {{- end }}

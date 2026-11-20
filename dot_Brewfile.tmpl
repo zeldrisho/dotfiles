@@ -1,5 +1,3 @@
-tap "zeldrisho/tap", "https://github.com/zeldrisho/homebrew-tap.git", trusted: true
-
 # Formulae not provided by Fedora WSL's DNF package list.
 brew "actionlint"
 brew "gomi"
@@ -21,7 +19,6 @@ if OS.mac?
   brew "tailscale"
   brew "uv"
   brew "zoxide"
-  brew "zeldrisho/tap/smapi", trusted: true
 
   cask "ente-auth"
   cask "firefox"
@@ -29,16 +26,7 @@ if OS.mac?
   cask "google-drive"
   cask "maccy"
   cask "obsidian"
-  cask "pot"
   cask "protonvpn"
   cask "steam"
   cask "sublime-text"
-  cask "teamviewer"
-end
-
-# Optional packages: HOMEBREW_BUNDLE_OPTIONAL=1 brew bundle
-if ENV["HOMEBREW_BUNDLE_OPTIONAL"] == "1"
-  brew "morphe"
-  brew "openjdk@21"
-  brew "zeldrisho/tap/smali", trusted: true
 end

@@ -1,0 +1,29 @@
+# Agent Instructions
+
+## Toolchain
+
+- Use chezmoi for managing files in this repository.
+
+## Commands
+
+| Task | Command |
+| --- | --- |
+| Show pending changes | `git status --short` |
+| Preview rendered changes | `chezmoi diff` |
+| Preview an apply | `chezmoi apply --dry-run` |
+| Inspect a rendered file | `chezmoi cat <target>` |
+| Apply changes | `chezmoi apply` |
+
+## Rules
+
+- Use chezmoi naming conventions: `dot_` for hidden files and `private_` for private paths.
+- Review `chezmoi diff` before applying changes.
+- Never commit secrets, tokens, credentials, or machine-specific private data.
+- Keep `AGENTS.md`, `README.md`, and `LICENSE` source-only; they are excluded from chezmoi application.
+
+## References
+
+| Need | File |
+| --- | --- |
+| Project usage | `README.md` |
+| Chezmoi documentation | `https://www.chezmoi.io/` |

@@ -1,0 +1,9 @@
+{{- $includePath := "~/.gitconfig.linux" -}}
+{{- if eq .chezmoi.os "darwin" -}}
+{{-   $includePath = "~/.gitconfig.darwin" -}}
+{{- end -}}
+[user]
+	name = Zeldris
+	email = 80939130+zeldrisho@users.noreply.github.com
+[include]
+	path = {{ $includePath }}

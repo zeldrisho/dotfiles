@@ -1,0 +1,62 @@
+tap "zeldrisho/tap", "https://github.com/zeldrisho/homebrew-tap.git", trusted: true
+# Static checker for GitHub Actions workflow files
+brew "actionlint"
+# Manage your dotfiles across multiple diverse machines, securely
+brew "chezmoi"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# User-friendly command-line shell for UNIX-like operating systems
+brew "fish"
+# GitHub command-line tool
+brew "gh"
+# Distributed revision control system
+brew "git"
+# Functions like rm but with the ability to restore files
+brew "gomi"
+# Agent multiplexer that lives in your terminal
+brew "herdr"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Modern and intuitive terminal-based text editor
+brew "micro"
+# AI agent toolkit
+brew "pi-coding-agent"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.15", link: false
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Open source continuous file synchronization application
+brew "syncthing", restart_service: :changed
+# Easiest, most secure way to use WireGuard and 2FA
+brew "tailscale"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
+# Unified toolchain and entry point for web development
+brew "vite-plus"
+# Blazing fast terminal file manager written in Rust, based on async I/O
+brew "yazi"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
+# Modding framework and API for Stardew Valley
+brew "zeldrisho/tap/smapi", trusted: true
+# Desktop client for Ente Auth
+cask "ente-auth"
+# Web browser
+cask "firefox"
+cask "font-jetbrains-mono-nerd-font"
+# Client for the Google Drive storage service
+cask "google-drive"
+# Clipboard manager
+cask "maccy"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
+# Software for text translation and recognition
+cask "pot"
+# VPN client focusing on security
+cask "protonvpn"
+# Video game digital distribution service
+cask "steam"
+# Text editor for code, markup and prose
+cask "sublime-text"
+# Remote access and connectivity software focused on security
+cask "teamviewer"

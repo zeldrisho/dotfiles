@@ -1,10 +1,29 @@
-if status is-interactive
-    # Commands to run in interactive sessions can go here
+# Homebrew (macOS and Linux/WSL)
+if test (uname) = Darwin
+    eval (/opt/homebrew/bin/brew shellenv fish)
+else if type -q brew
+    eval (brew shellenv fish)
 end
 
-switch (uname)
-case Darwin
-    eval (/opt/homebrew/bin/brew shellenv)
-case Linux
-    eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+set -g fish_greeting ""
+set -gx EDITOR micro
+set -gx MICRO_TRUECOLOR 1
+if test (uname) = Darwin
+    set -gx ANDROID_HOME "$HOME/Library/Android/sdk"
+end
+
+# Keep credentials and machine-specific variables in this untracked file.
+if test -r "$HOME/.config/fish/local.fish"
+    source "$HOME/.config/fish/local.fish"
+end
+
+zoxide init fish | source
+
+function y
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    command yazi $argv --cwd-file="$tmp"
+    if read -z cwd < "$tmp"; and test "$cwd" != "$PWD"; and test -d "$cwd"
+        builtin cd -- "$cwd"
+    end
+    command rm -f -- "$tmp"
 end

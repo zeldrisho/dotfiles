@@ -1,0 +1,7 @@
+onboarding = false
+
+[ui.toast]
+delivery = "herdr"
+
+[terminal]
+default_shell = "/opt/homebrew/bin/fish"

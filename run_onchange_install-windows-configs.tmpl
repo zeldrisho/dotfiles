@@ -2,12 +2,13 @@
 #!/bin/sh
 set -eu
 
-windows_config='/mnt/c/Users/zeldrisho/AppData/Roaming/alacritty'
+windows_user='{{ .chezmoi.username }}'
+windows_config="/mnt/c/Users/$windows_user/AppData/Roaming/alacritty"
 mkdir -p "$windows_config"
 cp "$HOME/.config/alacritty/windows/alacritty.toml" "$windows_config/alacritty.toml"
 cp "$HOME/.config/alacritty/windows/catppuccin-mocha.toml" "$windows_config/catppuccin-mocha.toml"
 
-sublime_config='/mnt/c/Users/zeldrisho/AppData/Roaming/Sublime Text/Packages/User'
+sublime_config="/mnt/c/Users/$windows_user/AppData/Roaming/Sublime Text/Packages/User"
 mkdir -p "$sublime_config"
 cp "$HOME/.config/sublime-text/windows/Preferences.sublime-settings" "$sublime_config/Preferences.sublime-settings"
 

@@ -5,6 +5,7 @@ eval (/opt/homebrew/bin/brew shellenv fish)
 eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)
 {{ end }}
 set -g fish_greeting
+fish_config theme choose catppuccin-mocha
 set -gx EDITOR micro
 set -gx MICRO_TRUECOLOR 1
 
@@ -28,8 +29,7 @@ function y
 end
 
 {{ if and (eq .chezmoi.os "linux") (contains "microsoft" (.chezmoi.kernel.osrelease | lower)) }}
-set -l brew_prefix /home/linuxbrew/.linuxbrew
-for completion_dir in "$brew_prefix/share/fish/completions" "$brew_prefix/share/fish/vendor_completions.d"
+for completion_dir in "$HOMEBREW_PREFIX/share/fish/completions" "$HOMEBREW_PREFIX/share/fish/vendor_completions.d"
     if test -d "$completion_dir"
         set -p fish_complete_path "$completion_dir"
     end

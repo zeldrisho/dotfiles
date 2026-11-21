@@ -9,6 +9,7 @@
     "npx": "prompt",
     "pip install": "prompt",
     "pipx": "prompt",
+    "rm -rf": "prompt",
     "sudo": "prompt"
   },
   "promptTimeoutMs": 120000

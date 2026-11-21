@@ -9,12 +9,6 @@ fish_config theme choose catppuccin-mocha
 set -gx EDITOR micro
 set -gx MICRO_TRUECOLOR 1
 
-if test (uname) = Darwin
-    set -gx ANDROID_HOME "$HOME/Library/Android/sdk"
-else
-    set -gx ANDROID_HOME "$HOME/Android/Sdk"
-end
-
 if type -q zoxide
     zoxide init fish | source
 end

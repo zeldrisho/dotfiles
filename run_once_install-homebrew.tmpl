@@ -1,3 +1,4 @@
+{{- if and (eq .chezmoi.os "linux") (contains "microsoft" (.chezmoi.kernel.osrelease | lower)) -}}
 #!/bin/sh
 set -eu
 
@@ -6,8 +7,5 @@ if command -v brew >/dev/null 2>&1; then
 fi
 
 install_script='https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh'
-{{ if eq .chezmoi.os "darwin" -}}
-/bin/bash -c "$(curl -fsSL $install_script)"
-{{ else -}}
-NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL $install_script)"
-{{ end -}}
+NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL \"$install_script\")"
+{{- end -}}

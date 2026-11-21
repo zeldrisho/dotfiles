@@ -3,12 +3,11 @@ brew "actionlint"
 brew "gomi"
 brew "herdr"
 brew "pi-coding-agent"
-brew "syncthing", restart_service: :changed
 brew "vite-plus"
 brew "yazi"
 
 if OS.mac?
-  brew "chezmoi"
+  brew "syncthing", restart_service: :changed
   brew "fd"
   brew "fish"
   brew "gh"
@@ -27,6 +26,5 @@ if OS.mac?
   cask "maccy"
   cask "obsidian"
   cask "protonvpn"
-  cask "steam"
   cask "sublime-text"
 end

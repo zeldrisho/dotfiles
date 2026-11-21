@@ -4,7 +4,7 @@
 	"font_face": "JetBrainsMono NF",
 	"font_size": 14,
 	"word_wrap": true,
-	"color_scheme": "Catppuccin Macchiato.sublime-color-scheme",
+	"color_scheme": "Catppuccin Mocha.sublime-color-scheme",
 	"ignored_packages":
 	[
 		"Vintage",

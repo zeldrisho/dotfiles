@@ -1,6 +1,14 @@
 {
   "collapseChangelog": true,
+  "extensionChangelogVersions": {
+    "{\"source\":\"../../Projects/pi-packages/packages/pi-antigravity\",\"scope\":\"user\"}": "0.2.0",
+    "{\"source\":\"../../Projects/pi-packages/packages/pi-gate\",\"scope\":\"user\"}": "0.8.0",
+    "{\"source\":\"../../Projects/pi-packages/packages/pi-opencode-free\",\"scope\":\"user\"}": "0.6.0",
+    "{\"source\":\"../../Projects/pi-packages/packages/pi-web-fetch\",\"scope\":\"user\"}": "0.18.0",
+    "{\"source\":\"../../Projects/pi-packages/packages/pi-web-search\",\"scope\":\"user\"}": "0.15.2"
+  },
   "hideThinkingBlock": true,
+  "lastChangelogVersion": "1.5.2",
   "packages": [
     "../../Projects/pi-packages/packages/pi-antigravity",
     "../../Projects/pi-packages/packages/pi-catppuccin",
@@ -13,13 +21,5 @@
   "terminal": {
     "showImages": false
   },
-  "theme": "catppuccin-mocha",
-  "lastChangelogVersion": "1.5.2",
-  "extensionChangelogVersions": {
-    "{\"source\":\"../../Projects/pi-packages/packages/pi-antigravity\",\"scope\":\"user\"}": "0.2.0",
-    "{\"source\":\"../../Projects/pi-packages/packages/pi-gate\",\"scope\":\"user\"}": "0.8.0",
-    "{\"source\":\"../../Projects/pi-packages/packages/pi-opencode-free\",\"scope\":\"user\"}": "0.6.0",
-    "{\"source\":\"../../Projects/pi-packages/packages/pi-web-fetch\",\"scope\":\"user\"}": "0.18.0",
-    "{\"source\":\"../../Projects/pi-packages/packages/pi-web-search\",\"scope\":\"user\"}": "0.15.2"
-  }
+  "theme": "catppuccin-mocha"
 }

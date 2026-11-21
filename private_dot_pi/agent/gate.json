@@ -1,14 +1,15 @@
 {
   "operations": {
+    "brew install": "prompt",
     "gh pr create": "prompt",
     "gh pr merge": "prompt",
     "git checkout": "prompt",
     "git switch": "prompt",
-    "sudo": "prompt",
     "npm install": "prompt",
-    "pip install": "prompt",
     "npx": "prompt",
-    "pipx": "prompt"
+    "pip install": "prompt",
+    "pipx": "prompt",
+    "sudo": "prompt"
   },
   "promptTimeoutMs": 120000
 }

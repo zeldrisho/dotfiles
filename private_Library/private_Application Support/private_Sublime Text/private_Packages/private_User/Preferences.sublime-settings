@@ -1,12 +1,12 @@
 // Settings in here override those in "Default/Preferences.sublime-settings",
 // and are overridden in turn by syntax-specific settings.
 {
+	"color_scheme": "Catppuccin Mocha.sublime-color-scheme",
 	"font_face": "JetBrainsMono NF",
 	"font_size": 14,
-	"word_wrap": true,
-	"color_scheme": "Catppuccin Mocha.sublime-color-scheme",
 	"ignored_packages":
 	[
 		"Vintage",
 	],
+	"word_wrap": true,
 }

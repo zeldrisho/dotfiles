@@ -8,7 +8,7 @@
     "{\"source\":\"../../Projects/pi-packages/packages/pi-web-search\",\"scope\":\"user\"}": "0.15.2"
   },
   "hideThinkingBlock": true,
-  "lastChangelogVersion": "1.5.2",
+  "lastChangelogVersion": "1.6.0",
   "packages": [
     "../../Projects/pi-packages/packages/pi-antigravity",
     "../../Projects/pi-packages/packages/pi-catppuccin",

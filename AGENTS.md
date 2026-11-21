@@ -18,7 +18,7 @@
 
 ## Rules
 
-- Before implementing changes, run `chezmoi update` and review `chezmoi diff`.
+- Before running `chezmoi update`, inspect `chezmoi status` for untracked or locally modified managed files. Add untracked files that should be preserved; for modified files, reconcile desired local values into the source or explicitly keep the source version before updating. Then run the update and review `chezmoi diff`.
 - Before implementing changes, research the relevant official documentation at `site:chezmoi.io`, `site:docs.brew.sh`, and `site:fishshell.com/docs`.
 - Use Conventional Commits.
 - Use chezmoi naming conventions: `dot_` for hidden files and `private_` for private paths.

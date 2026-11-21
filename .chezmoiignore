@@ -15,5 +15,5 @@ Library
 {{ if not (and (eq .chezmoi.os "linux") (contains "microsoft" (.chezmoi.kernel.osrelease | lower))) }}
 mnt
 .config/alacritty/windows
-.config/sublime/windows
+.config/sublime-text/windows
 {{ end }}

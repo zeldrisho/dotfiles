@@ -9,9 +9,9 @@ cp "$HOME/.config/alacritty/windows/catppuccin-mocha.toml" "$windows_config/catp
 
 sublime_config='/mnt/c/Users/zeldrisho/AppData/Roaming/Sublime Text/Packages/User'
 mkdir -p "$sublime_config"
-cp "$HOME/.config/sublime/windows/Preferences.sublime-settings" "$sublime_config/Preferences.sublime-settings"
+cp "$HOME/.config/sublime-text/windows/Preferences.sublime-settings" "$sublime_config/Preferences.sublime-settings"
 
 # {{ include "private_dot_config/alacritty/windows/alacritty.toml.tmpl" | sha256sum }}
 # {{ include "private_dot_config/alacritty/windows/catppuccin-mocha.toml.tmpl" | sha256sum }}
-# {{ include "private_dot_config/sublime/windows/Preferences.sublime-settings" | sha256sum }}
+# {{ include "private_dot_config/sublime-text/windows/Preferences.sublime-settings" | sha256sum }}
 {{- end }}

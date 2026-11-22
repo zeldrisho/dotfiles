@@ -24,13 +24,15 @@ chezmoi apply
 chezmoi cd
 ```
 
-On a new machine, initialize from the remote repository and review the result before applying:
+Bootstrap is supported from Fedora WSL. Initialize there and review the result before applying:
 
 ```sh
 chezmoi init https://github.com/zeldrisho/dotfiles.git
 chezmoi diff
 chezmoi apply
 ```
+
+Windows and macOS are sync targets, not bootstrap targets.
 
 ## License
 

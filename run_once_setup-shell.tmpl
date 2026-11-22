@@ -1,0 +1,7 @@
+{{- if and (eq .chezmoi.os "linux") (contains "microsoft" (.chezmoi.kernel.osrelease | lower)) -}}
+#!/bin/sh
+set -eu
+
+sudo chsh -s /usr/bin/fish '{{ .chezmoi.username }}'
+
+{{- end }}

@@ -6,9 +6,14 @@ eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)
 {{ end }}
 set -g fish_greeting
 fish_config theme choose catppuccin-mocha
+
 set -gx EDITOR micro
 set -gx MICRO_TRUECOLOR 1
-
+{{ if eq .chezmoi.os "darwin" -}}
+set -gx ANDROID_HOME "$HOME/Library/Android/sdk"
+{{ else if and (eq .chezmoi.os "linux") (contains "microsoft" (.chezmoi.kernel.osrelease | lower)) -}}
+set -gx ANDROID_HOME "$HOME/Android/Sdk"
+{{ end }}
 if type -q zoxide
     zoxide init fish | source
 end
@@ -21,7 +26,6 @@ function y
     end
     command rm -f -- "$tmp"
 end
-
 {{ if and (eq .chezmoi.os "linux") (contains "microsoft" (.chezmoi.kernel.osrelease | lower)) }}
 for completion_dir in "$HOMEBREW_PREFIX/share/fish/completions" "$HOMEBREW_PREFIX/share/fish/vendor_completions.d"
     if test -d "$completion_dir"

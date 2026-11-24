@@ -9,6 +9,7 @@ fish_config theme choose catppuccin-mocha
 
 set -gx EDITOR micro
 set -gx MICRO_TRUECOLOR 1
+set -gx AGENT_BROWSER_ENGINE lightpanda
 {{ if eq .chezmoi.os "darwin" -}}
 set -gx ANDROID_HOME "$HOME/Library/Android/sdk"
 {{ else if and (eq .chezmoi.os "linux") (contains "microsoft" (.chezmoi.kernel.osrelease | lower)) -}}

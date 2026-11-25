@@ -1,7 +1,6 @@
 {
   "collapseChangelog": true,
   "extensionChangelogVersions": {
-    "{\"source\":\"../../Projects/pi-packages/packages/pi-antigravity\",\"scope\":\"user\"}": "0.2.0",
     "{\"source\":\"../../Projects/pi-packages/packages/pi-gate\",\"scope\":\"user\"}": "0.8.0",
     "{\"source\":\"../../Projects/pi-packages/packages/pi-opencode-free\",\"scope\":\"user\"}": "0.6.0",
     "{\"source\":\"../../Projects/pi-packages/packages/pi-web-fetch\",\"scope\":\"user\"}": "0.18.0",
@@ -10,7 +9,6 @@
   "hideThinkingBlock": true,
   "lastChangelogVersion": "1.6.0",
   "packages": [
-    "../../Projects/pi-packages/packages/pi-antigravity",
     "../../Projects/pi-packages/packages/pi-catppuccin",
     "../../Projects/pi-packages/packages/pi-gate",
     "../../Projects/pi-packages/packages/pi-opencode-free",

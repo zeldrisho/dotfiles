@@ -1,32 +1,22 @@
-# Agent Instructions
+# Repository Guidelines
 
-## Toolchain
+## Repository Structure
 
-- Use chezmoi for managing files in this repository.
-- Use `fd` for file discovery and search.
+This is a chezmoi source repository, not an application. `private_dot_config/` manages application settings and themes under `~/.config/`; `private_dot_pi/` manages pi settings, and `private_Library/` holds macOS Sublime Text preferences. Root templates manage `~/.Brewfile` and `~/.gitconfig`. Root `run_once_*` and `run_onchange_*` templates handle setup and package or configuration synchronization. Fedora WSL is the supported bootstrap environment; macOS and Windows are sync targets only.
 
-## Commands
+## Development and Validation
 
-| Task | Command |
-| --- | --- |
-| Show pending changes | `git status --short` |
-| Preview rendered changes | `chezmoi diff` |
-| Preview an apply | `chezmoi apply --dry-run` |
-| Inspect a rendered file | `chezmoi cat <target>` |
-| Apply changes | `chezmoi apply` |
-| Refresh global Brewfile | `brew bundle dump --global --force` |
+- `chezmoi add ~/.config/example/config` imports a file into the source tree.
+- `chezmoi cat ~/.config/fish/config.fish` shows a rendered target for the current machine.
+- `chezmoi diff` previews changes; `chezmoi apply --dry-run --verbose` previews an apply without changing the home directory. Review both before running `chezmoi apply`, which can install packages or copy Windows settings.
+- There is no build step, automated test suite, or coverage requirement. For script changes, syntax-check the rendered result with `sh -n` or `fish -n`, matching the script's interpreter. Check relevant platform branches on their target environments and note any you could not verify.
 
-## Rules
+## Style and Configuration
 
-- Before running `chezmoi update`, inspect `chezmoi status` for untracked or locally modified managed files. Add untracked files that should be preserved; for modified files, reconcile desired local values into the source or explicitly keep the source version before updating. Then run the update and review `chezmoi diff`.
-- Before implementing changes, research the relevant official documentation at `site:chezmoi.io`, `site:docs.brew.sh`, and `site:fishshell.com/docs`.
-- Use chezmoi naming conventions: `dot_` for hidden files and `private_` for private paths.
-- Review `chezmoi diff` before applying changes.
-- Never commit secrets, tokens, credentials, or machine-specific private data.
-- Keep `AGENTS.md`, `README.md`, and `LICENSE` source-only; they are excluded from chezmoi application.
+Use chezmoi's `dot_` prefix for hidden paths, `private_` for restricted permissions, and `.tmpl` for rendered files. Match surrounding indentation and syntax. Use `run_once_` for one-time setup and `run_onchange_` for scripts that should rerun when their rendered content changes. Use chezmoi variables for user and platform values rather than hardcoding machine-specific paths.
 
-## References
+Keep credentials, signing material, and local overrides out of Git. Keep `AGENTS.md`, `README.md`, and `LICENSE` excluded from application via `.chezmoiignore`. Before `chezmoi update`, check `chezmoi status` and reconcile local changes you want to keep.
 
-| Need | File |
-| --- | --- |
-| Project usage | `README.md` |
+## Commits and Pull Requests
+
+Write short subjects that describe the change. Recent history uses prefixes such as `chore(fish):`, but Conventional Commits are not required. In pull requests, explain the motivation, identify affected platforms, and summarize validation. Link related issues when applicable and include screenshots for visible theme or UI changes when useful.

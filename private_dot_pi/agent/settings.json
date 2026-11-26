@@ -3,7 +3,7 @@
   "extensionChangelogVersions": {
     "{\"source\":\"../../Projects/pi-packages/packages/pi-gate\",\"scope\":\"user\"}": "0.8.0",
     "{\"source\":\"../../Projects/pi-packages/packages/pi-opencode-free\",\"scope\":\"user\"}": "0.6.0",
-    "{\"source\":\"../../Projects/pi-packages/packages/pi-web-fetch\",\"scope\":\"user\"}": "0.18.0",
+    "{\"source\":\"../../Projects/pi-packages/packages/pi-web-fetch\",\"scope\":\"user\"}": "0.18.1",
     "{\"source\":\"../../Projects/pi-packages/packages/pi-web-search\",\"scope\":\"user\"}": "0.15.2"
   },
   "hideThinkingBlock": true,
@@ -12,7 +12,6 @@
     "../../Projects/pi-packages/packages/pi-catppuccin",
     "../../Projects/pi-packages/packages/pi-gate",
     "../../Projects/pi-packages/packages/pi-opencode-free",
-    "../../Projects/pi-packages/packages/pi-sentry-skills",
     "../../Projects/pi-packages/packages/pi-web-fetch",
     "../../Projects/pi-packages/packages/pi-web-search"
   ],

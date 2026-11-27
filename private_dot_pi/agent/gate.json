@@ -3,7 +3,7 @@
     "brew install": "prompt",
     "gh pr create": "prompt",
     "gh pr merge": "prompt",
-    "git checkout": "prompt",
+    "git push": "prompt",
     "git switch": "prompt",
     "npm install": "prompt",
     "npx": "prompt",
